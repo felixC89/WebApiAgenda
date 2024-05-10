@@ -15,7 +15,7 @@ namespace WebApiAgenda
             // Add services to the container.
 
             builder.Services.AddControllers();
-            builder.Services.AddDbContext<AgendaDbContext>(c => c.UseSqlServer(builder.Configuration.GetConnectionString("AgendaDatabase")));
+            //builder.Services.AddDbContext<AgendaDbContext>(c => c.UseSqlServer(builder.Configuration.GetConnectionString("AgendaDatabase")));
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddMapper();
             builder.Services.AddInjection(builder.Configuration);
@@ -31,9 +31,9 @@ namespace WebApiAgenda
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            //Se agrega el ! al if para que funcione en azure, en local debe quitarse
-            //if (!app.Environment.IsDevelopment())
-            if (app.Environment.IsDevelopment())
+            //Se agrega el ! al if para que funcione en azure o iis, en localVS debe quitarse
+            if (!app.Environment.IsDevelopment())
+            //if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
