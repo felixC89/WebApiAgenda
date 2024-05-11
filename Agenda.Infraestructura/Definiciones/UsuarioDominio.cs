@@ -133,6 +133,31 @@ namespace Agenda.Infraestructura.Definiciones
             }
         }
 
+        public async Task<Response<bool>> isUserValid(Usuario user)
+        {
+            try
+            {
+                var requestReporitory = await _repository.isUserValid(user);
+
+                return new Response<bool>
+                {
+                    IsSuccessfullRequest = requestReporitory.IsSuccessfullRequest,
+                    Message = requestReporitory.Message,
+                    Data = requestReporitory.Data
+                };
+
+            }
+            catch (Exception ex)
+            {
+                return new Response<bool>
+                {
+                    IsSuccessfullRequest = false,
+                    Message = $"Error al realizar la operación en el repositorio: {ex.Message}",
+                    Data = false
+                };
+            }
+        }
+
         public async Task<Response<bool>> UpdateUser(Usuario newUser)
         {
             try

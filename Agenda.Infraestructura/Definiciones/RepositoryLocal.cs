@@ -328,5 +328,38 @@ namespace Agenda.Infraestructura.Definiciones
                 return result;
             }
         }
+
+        public async Task<Response<bool>> isUserValid(Usuario User)
+        {
+            var result = new Dominio.Utilies.Response<bool>
+            {
+                IsSuccessfullRequest = true,
+                Message = "Operación realizada con exito!",
+                Data = true
+            };
+
+            try
+            {
+                var contacto = await _db.Usuarios.Where(a => a.Username == User.Username && a.Password == User.Password).FirstOrDefaultAsync();
+
+                if (contacto == null)
+                {
+                    result.Message = "No se encontro el registro.";
+                    result.Data = false;
+
+                    return result;
+                }
+
+                return result;
+
+            }
+            catch (Exception ex)
+            {
+                result.IsSuccessfullRequest = false;
+                result.Message = $"Ocurrió un error con aws al realizar la operación:{ex.Message}";
+                result.Data = false;
+                return result;
+            }
+        }
     }
 }

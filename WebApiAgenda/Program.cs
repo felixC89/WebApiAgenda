@@ -32,8 +32,8 @@ namespace WebApiAgenda
 
             // Configure the HTTP request pipeline.
             //Se agrega el ! al if para que funcione en azure o iis, en localVS debe quitarse
-            if (!app.Environment.IsDevelopment())
-            //if (app.Environment.IsDevelopment())
+            //if (!app.Environment.IsDevelopment())
+            if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();

@@ -328,5 +328,10 @@ namespace Agenda.Infraestructura.Definiciones
                 return result;
             }
         }
+
+        public Task<Response<bool>> isUserValid(Usuario User)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -57,6 +57,25 @@ namespace WebApiAgenda.Controllers
         }
 
         // POST api/<UsuarioController>
+        [HttpPost("isUserValidAsync")]
+        public async Task<IActionResult> isUserValidAsync([FromBody] UsuarioDto user)
+        {
+            try
+            {
+                var response = await _usuario.isValidUser(user);
+                if (response.IsSuccessfullRequest)
+                {
+                    return Ok(response);
+                }
+                return BadRequest(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        // POST api/<UsuarioController>
         [HttpPost("AgregarUserAsync")]
         public async Task<IActionResult> AgregarUserAsync([FromBody] UsuarioDto user)
         {
