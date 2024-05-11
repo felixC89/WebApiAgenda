@@ -16,6 +16,7 @@ namespace Agenda.Dominio.Interfaces
         Task<Response<IEnumerable<Usuario>>> GetAllUsers();
         Task<Response<Usuario>> GetUserById(int id);
         Task<Response<bool>> AddUser(Usuario newUser);
+        Task<Response<bool>> isUserValid(Usuario User);
         Task<Response<bool>> UpdateUser(Usuario newUser);
         Task<Response<bool>> DeleteUser(int id);
     }

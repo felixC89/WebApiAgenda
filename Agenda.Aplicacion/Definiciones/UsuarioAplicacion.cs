@@ -139,11 +139,37 @@ namespace Agenda.Aplicacion.Definiciones
             }
         }
 
-        public async Task<Response<bool>> UpdateUser(UsuarioDto newUser)
+        public async Task<Response<bool>> isValidUser(UsuarioDto user)
         {
             try
             {
-                Usuario newuser = _mapper.Map<Usuario>(newUser);
+                Usuario validateuser = _mapper.Map<Usuario>(user);
+                var requestdomain = await _usuarioDominio.isUserValid(validateuser);
+
+                return new Dominio.Utilies.Response<bool>
+                {
+                    IsSuccessfullRequest = requestdomain.IsSuccessfullRequest,
+                    Message = requestdomain.Message,
+                    Data = requestdomain.Data
+                };
+
+            }
+            catch (Exception ex)
+            {
+                return new Dominio.Utilies.Response<bool>
+                {
+                    IsSuccessfullRequest = false,
+                    Message = $"Error al realizar la operación: {ex.Message}",
+                    Data = false
+                };
+            }
+        }
+
+        public async Task<Response<bool>> UpdateUser(UsuarioDto User)
+        {
+            try
+            {
+                Usuario newuser = _mapper.Map<Usuario>(User);
                 var requestdomain = await _usuarioDominio.UpdateUser(newuser);
 
                 return new Dominio.Utilies.Response<bool>
