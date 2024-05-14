@@ -66,13 +66,6 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
-                var validationResult = await _validator.ValidateAsync(user);
-
-                if (!validationResult.IsValid)
-                {
-                    return BadRequest(string.Join(',', validationResult.Errors.Select(a => a.ErrorMessage)));
-                }
-
                 var response = await _usuario.isValidUser(user);
                 if (response.IsSuccessfullRequest)
                 {
@@ -92,14 +85,6 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
-
-                var validationResult = await _validator.ValidateAsync(user);
-
-                if (!validationResult.IsValid)
-                {
-                    return BadRequest(string.Join(',', validationResult.Errors.Select(a => a.ErrorMessage)));
-                }
-
                 var response = await _usuario.AddUser(user);
                 if (response.IsSuccessfullRequest)
                 {
@@ -119,13 +104,6 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
-                var validationResult = await _validator.ValidateAsync(user);
-
-                if (!validationResult.IsValid)
-                {
-                    return BadRequest(string.Join(',', validationResult.Errors.Select(a => a.ErrorMessage)));
-                }
-
                 var response = await _usuario.UpdateUser(user);
                 if (response.IsSuccessfullRequest)
                 {

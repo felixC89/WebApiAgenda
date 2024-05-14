@@ -41,11 +41,10 @@ namespace WebApiAgenda.Test
 
             _mockUserDomain.Setup(service => service.GetAllUsers()).Returns(usuarios);
 
-            UsuarioAplicacion _usuarioAplicacion = new UsuarioAplicacion(_mockUserDomain.Object, _mapper.Object);
 
             ////Act
 
-            var result = Task.FromResult(await _usuarioAplicacion.GetAllUsers());
+            var result = Task.FromResult(await _usuarioApl.GetAllUsers());
 
             ////Assert
 
