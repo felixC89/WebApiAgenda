@@ -1,6 +1,8 @@
 ﻿using Agenda.Aplicacion.Dtos;
 using Agenda.Aplicacion.Interfaces;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,10 +14,12 @@ namespace WebApiAgenda.Controllers
     {
 
         private readonly IUsuarioAplicacion _usuario;
+        private readonly IValidator<UsuarioDto> _validator;
 
-        public UsuarioController(IUsuarioAplicacion usuario)
+        public UsuarioController(IUsuarioAplicacion usuario, IValidator<UsuarioDto> validator)
         {
             _usuario = usuario;
+            _validator = validator;
         }
 
         // GET: api/<UsuarioController>
@@ -62,6 +66,13 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
+                var validationResult = await _validator.ValidateAsync(user);
+
+                if (!validationResult.IsValid)
+                {
+                    return BadRequest(string.Join(',', validationResult.Errors.Select(a => a.ErrorMessage)));
+                }
+
                 var response = await _usuario.isValidUser(user);
                 if (response.IsSuccessfullRequest)
                 {
@@ -81,6 +92,14 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
+
+                var validationResult = await _validator.ValidateAsync(user);
+
+                if (!validationResult.IsValid)
+                {
+                    return BadRequest(string.Join(',', validationResult.Errors.Select(a => a.ErrorMessage)));
+                }
+
                 var response = await _usuario.AddUser(user);
                 if (response.IsSuccessfullRequest)
                 {
@@ -100,6 +119,13 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
+                var validationResult = await _validator.ValidateAsync(user);
+
+                if (!validationResult.IsValid)
+                {
+                    return BadRequest(string.Join(',', validationResult.Errors.Select(a => a.ErrorMessage)));
+                }
+
                 var response = await _usuario.UpdateUser(user);
                 if (response.IsSuccessfullRequest)
                 {

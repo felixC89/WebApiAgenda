@@ -1,5 +1,8 @@
 
+using Agenda.Aplicacion.Dtos;
+using Agenda.Aplicacion.Validator;
 using Agenda.Infraestructura.ModelLocal;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using SWebApiAgenda;
 
@@ -19,6 +22,7 @@ namespace WebApiAgenda
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddMapper();
             builder.Services.AddInjection(builder.Configuration);
+            builder.Services.AddScoped<IValidator<UsuarioDto>, UserValidator>();
             builder.Services.AddCors(cors => {
                 cors.AddPolicy(_MyCors, builder => { builder
                     .SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
