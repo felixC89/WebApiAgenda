@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Agenda.Aplicacion", "..\Age
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Proyect", "Proyect", "{3A332BD3-D660-480F-BFC6-3AE0C0543930}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiAgenda.Test", "..\WebApiAgenda.Test\WebApiAgenda.Test.csproj", "{8AD9CFD4-025D-4339-9394-F4C589D1EE26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{E756B550-9283-4220-8076-BDAFC0A600DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E756B550-9283-4220-8076-BDAFC0A600DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E756B550-9283-4220-8076-BDAFC0A600DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD9CFD4-025D-4339-9394-F4C589D1EE26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD9CFD4-025D-4339-9394-F4C589D1EE26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD9CFD4-025D-4339-9394-F4C589D1EE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD9CFD4-025D-4339-9394-F4C589D1EE26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{CF6EE62F-130C-4F7D-B456-5BC4019F1CBA} = {3A332BD3-D660-480F-BFC6-3AE0C0543930}
 		{C2291701-5B62-4B3F-9341-7D6B5EA537A7} = {3A332BD3-D660-480F-BFC6-3AE0C0543930}
 		{E756B550-9283-4220-8076-BDAFC0A600DA} = {3A332BD3-D660-480F-BFC6-3AE0C0543930}
+		{8AD9CFD4-025D-4339-9394-F4C589D1EE26} = {3A332BD3-D660-480F-BFC6-3AE0C0543930}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D354186-D061-4706-B12E-71373188FF16}
