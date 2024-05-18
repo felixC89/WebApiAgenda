@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Agenda.Infraestructura.ModelLocal;
 
-public partial class AgendaDbContext : DbContext
+public partial class AgendaDbContext : DbContext, IAgendaDbContext
 {
     public AgendaDbContext()
     {

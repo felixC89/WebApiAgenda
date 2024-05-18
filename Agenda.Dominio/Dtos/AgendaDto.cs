@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Agenda.Aplicacion.Dtos
+namespace Agenda.Dominio.Dtos
 {
     public class AgendaDto
     {

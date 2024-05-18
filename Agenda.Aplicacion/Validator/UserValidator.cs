@@ -1,4 +1,4 @@
-﻿using Agenda.Aplicacion.Dtos;
+﻿using Agenda.Dominio.Dtos;
 using FluentValidation;
 
 namespace Agenda.Aplicacion.Validator

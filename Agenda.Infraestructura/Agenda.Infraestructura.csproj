@@ -12,11 +12,11 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="ModelLocal\" />
     <Folder Include="Scripts DB\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.18" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.18">
       <PrivateAssets>all</PrivateAssets>

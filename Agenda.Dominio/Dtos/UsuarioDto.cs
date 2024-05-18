@@ -1,4 +1,4 @@
-﻿namespace Agenda.Aplicacion.Dtos
+﻿namespace Agenda.Dominio.Dtos
 {
     public class UsuarioDto
     {
