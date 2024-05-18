@@ -1,5 +1,8 @@
-﻿using Agenda.Aplicacion.Dtos;
-using Agenda.Aplicacion.Interfaces;
+﻿using Agenda.Dominio.Dtos;
+using Agenda.Infraestructura.Commands.AgendaCommands;
+using Agenda.Infraestructura.Queries.UserQueries;
+using FluentValidation;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,12 +13,11 @@ namespace WebApiAgenda.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
+        private readonly IMediator _mediator;
 
-        private readonly IUsuarioAplicacion _usuario;
-
-        public UsuarioController(IUsuarioAplicacion usuario)
+        public UsuarioController(IMediator mediator)
         {
-            _usuario = usuario;
+            _mediator = mediator;
         }
 
         // GET: api/<UsuarioController>
@@ -24,7 +26,7 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
-                var response = await _usuario.GetAllUsers();
+                var response = await _mediator.Send(new GetAllUserTaskQuery());
                 if (response.IsSuccessfullRequest)
                 {
                     return Ok(response);
@@ -43,7 +45,7 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
-                var response = await _usuario.GetUsuarioById(id);
+                var response = await _mediator.Send(new GetByIdUserTaskQuery(id));
                 if (response.IsSuccessfullRequest)
                 {
                     return Ok(response);
@@ -62,7 +64,7 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
-                var response = await _usuario.isValidUser(user);
+                var response = await _mediator.Send(new IsValidUserTaskQuery(user));
                 if (response.IsSuccessfullRequest)
                 {
                     return Ok(response);
@@ -81,7 +83,7 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
-                var response = await _usuario.AddUser(user);
+                var response = await _mediator.Send(new CreateUserTaskCommand(user));
                 if (response.IsSuccessfullRequest)
                 {
                     return Ok(response);
@@ -100,7 +102,7 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
-                var response = await _usuario.UpdateUser(user);
+                var response = await _mediator.Send(new UpdateUserTaskCommand(user));
                 if (response.IsSuccessfullRequest)
                 {
                     return Ok(response);
@@ -119,7 +121,7 @@ namespace WebApiAgenda.Controllers
         {
             try
             {
-                var response = await _usuario.DeleteUser(id);
+                var response = await _mediator.Send(new DeleteUserTaskCommand(id));
                 if (response.IsSuccessfullRequest)
                 {
                     return Ok(response);

@@ -1,4 +1,4 @@
-﻿using Agenda.Aplicacion.Dtos;
+﻿using Agenda.Dominio.Dtos;
 using Agenda.Dominio.Entidades;
 using AutoMapper;
 
