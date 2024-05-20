@@ -1,4 +1,4 @@
-﻿using Agenda.CrossCutting;
+﻿using Agenda.CrossCutting.Mapping;
 using AutoMapper;
 
 namespace SWebApiAgenda

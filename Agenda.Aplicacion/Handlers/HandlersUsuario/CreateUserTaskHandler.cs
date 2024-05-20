@@ -2,7 +2,7 @@
 using Agenda.Dominio.Entidades;
 using Agenda.Dominio.Interfaces;
 using Agenda.Dominio.Utilies;
-using Agenda.Infraestructura.Commands.AgendaCommands;
+using Agenda.Infraestructura.Commands.UsersCommands;
 using AutoMapper;
 using MediatR;
 
@@ -22,8 +22,8 @@ namespace Agenda.Aplicacion.Handlers.HandlersUsuario
         {
             var newUserDto = new UsuarioDto
             {
-               Username = request.UserDto.Username,
-               Password = request.UserDto.Password
+                Username = request.UserDto.Username,
+                Password = request.UserDto.Password
             };
 
             var newUser = _mapper.Map<Usuario>(newUserDto);

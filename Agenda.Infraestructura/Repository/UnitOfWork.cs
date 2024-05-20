@@ -21,7 +21,7 @@ namespace Agenda.Infraestructura.Repository
             _context.Dispose();
         }
 
-        
+
 
         IRepositoryAgendaRead IUnitofWork.RepositoryAgendaRead => _RepositoryAgendaRead ?? new RepositoryAgendaRead(_context);
 

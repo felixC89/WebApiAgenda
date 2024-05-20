@@ -1,5 +1,4 @@
-﻿using Agenda.Dominio.Dtos;
-using Agenda.Dominio.Entidades;
+﻿using Agenda.Dominio.Entidades;
 using Agenda.Dominio.Interfaces;
 using Agenda.Dominio.Utilies;
 using Agenda.Infraestructura.Commands.AgendaCommands;
@@ -57,7 +56,7 @@ namespace Agenda.Aplicacion.Handlers.HandlersAgenda
                 }
 
                 await _unitOfWork.SaveChangesAsync();
-                
+
                 return new Response<bool>
                 {
                     IsSuccessfullRequest = result.IsSuccessfullRequest,

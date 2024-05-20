@@ -1,7 +1,7 @@
 ﻿using Agenda.Dominio.Entidades;
 using Agenda.Dominio.Interfaces;
 using Agenda.Dominio.Utilies;
-using Agenda.Infraestructura.Commands.AgendaCommands;
+using Agenda.Infraestructura.Commands.UsersCommands;
 using AutoMapper;
 using MediatR;
 
@@ -56,7 +56,7 @@ namespace Agenda.Aplicacion.Handlers.HandlersUsuario
                 });
             }
 
-                _unitOfWork.SaveChangesAsync();
+            _unitOfWork.SaveChangesAsync();
 
             return Task.FromResult(result);
         }

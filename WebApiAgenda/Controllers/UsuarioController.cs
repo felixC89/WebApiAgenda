@@ -1,7 +1,6 @@
 ﻿using Agenda.Dominio.Dtos;
-using Agenda.Infraestructura.Commands.AgendaCommands;
-using Agenda.Infraestructura.Queries.UserQueries;
-using FluentValidation;
+using Agenda.Infraestructura.Commands.UsersCommands;
+using Agenda.Infraestructura.Queries.UsersQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

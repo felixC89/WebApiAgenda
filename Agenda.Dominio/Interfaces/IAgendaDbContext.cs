@@ -1,7 +1,7 @@
 ﻿using Agenda.Dominio.Entidades;
 using Microsoft.EntityFrameworkCore;
 
-namespace Agenda.Infraestructura.ModelLocal
+namespace Agenda.Dominio.Interfaces
 {
     public interface IAgendaDbContext
     {
