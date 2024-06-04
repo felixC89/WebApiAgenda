@@ -47,12 +47,14 @@ namespace Agenda.Aplicacion.Handlers.HandlersAgenda
 
                 if (result?.Data == null)
                 {
+#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
                     return new Response<bool>
                     {
                         IsSuccessfullRequest = result.IsSuccessfullRequest,
                         Message = result.Message,
                         Data = result.Data,
                     };
+#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
                 }
 
                 await _unitOfWork.SaveChangesAsync();

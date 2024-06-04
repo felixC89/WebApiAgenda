@@ -32,12 +32,14 @@ namespace Agenda.Aplicacion.Handlers.HandlersUsuario
 
             if (result == null)
             {
+#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
                 return new Response<bool>
                 {
                     IsSuccessfullRequest = false,
                     Message = $"Error al realizar la operación",
                     Data = result.Data,
                 };
+#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
             }
 
             if (!result.IsSuccessfullRequest)
