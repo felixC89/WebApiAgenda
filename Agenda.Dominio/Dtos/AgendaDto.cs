@@ -10,7 +10,7 @@ namespace Agenda.Dominio.Dtos
         public string Nombre { get; set; } = null!;
 
         [Required(ErrorMessage = "El es campo apellida es requerido")]
-        public string Apellido { get; set; } = null!;
+        public string? Apellido { get; set; } = null!;
 
         [Required(ErrorMessage = "El es campo nacionalidad es requerido")]
         public string Nacionalidad { get; set; } = null!;
