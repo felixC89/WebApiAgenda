@@ -2,7 +2,7 @@
 using Agenda.Dominio.Entidades;
 using AutoMapper;
 
-namespace Agenda.CrossCutting
+namespace Agenda.CrossCutting.Mapping
 {
     public class MappingProfile : Profile
     {

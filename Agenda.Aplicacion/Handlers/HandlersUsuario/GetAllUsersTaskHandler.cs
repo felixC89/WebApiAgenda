@@ -1,8 +1,7 @@
 ﻿using Agenda.Dominio.Dtos;
-using Agenda.Dominio.Entidades;
 using Agenda.Dominio.Interfaces;
 using Agenda.Dominio.Utilies;
-using Agenda.Infraestructura.Queries.UserQueries;
+using Agenda.Infraestructura.Queries.UsersQueries;
 using AutoMapper;
 using MediatR;
 
@@ -22,7 +21,7 @@ namespace Agenda.Aplicacion.Handlers.HandlersUsuario
         {
             var resultUsers = await _unitOfWork.RepositoryUsuarioRead.GetAllUsersAsync();
 
-            if (resultUsers == null) 
+            if (resultUsers == null)
             {
                 return new Response<IEnumerable<UsuarioDto>>
                 {
@@ -32,7 +31,7 @@ namespace Agenda.Aplicacion.Handlers.HandlersUsuario
                 };
             }
 
-            if (!resultUsers.IsSuccessfullRequest) 
+            if (!resultUsers.IsSuccessfullRequest)
             {
                 return new Response<IEnumerable<UsuarioDto>>
                 {
@@ -42,7 +41,7 @@ namespace Agenda.Aplicacion.Handlers.HandlersUsuario
                 };
             }
 
-            if (resultUsers.Data == null) 
+            if (resultUsers.Data == null)
             {
                 return new Response<IEnumerable<UsuarioDto>>
                 {

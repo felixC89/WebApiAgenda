@@ -1,7 +1,7 @@
 ﻿using Agenda.Dominio.Dtos;
 using Agenda.Dominio.Interfaces;
 using Agenda.Dominio.Utilies;
-using Agenda.Infraestructura.Queries.UserQueries;
+using Agenda.Infraestructura.Queries.UsersQueries;
 using AutoMapper;
 using MediatR;
 

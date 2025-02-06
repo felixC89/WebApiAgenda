@@ -6,9 +6,13 @@ namespace Agenda.Infraestructura.Repository
     public class UnitOfWork : IUnitofWork
     {
         private readonly AgendaDbContext _context;
+
         private IRepositoryUsuarioRead _RepositoryUsuarioRead;
+
         private IRepositoryUsuarioWrite _RepositoryUsuarioWrite;
+
         private IRepositoryAgendaRead _RepositoryAgendaRead;
+
         private IRepositoryAgendaWrite _RepositoryAgendaWrite;
 
         public UnitOfWork(AgendaDbContext context)
@@ -21,7 +25,7 @@ namespace Agenda.Infraestructura.Repository
             _context.Dispose();
         }
 
-        
+
 
         IRepositoryAgendaRead IUnitofWork.RepositoryAgendaRead => _RepositoryAgendaRead ?? new RepositoryAgendaRead(_context);
 

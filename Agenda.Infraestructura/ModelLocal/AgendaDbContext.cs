@@ -1,4 +1,5 @@
 ﻿using Agenda.Dominio.Entidades;
+using Agenda.Dominio.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 

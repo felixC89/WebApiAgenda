@@ -1,5 +1,4 @@
-﻿using Agenda.Dominio.Dtos;
-using Agenda.Dominio.Entidades;
+﻿using Agenda.Dominio.Entidades;
 using Agenda.Dominio.Interfaces;
 using Agenda.Dominio.Utilies;
 using Agenda.Infraestructura.Commands.AgendaCommands;
@@ -48,16 +47,18 @@ namespace Agenda.Aplicacion.Handlers.HandlersAgenda
 
                 if (result?.Data == null)
                 {
+#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
                     return new Response<bool>
                     {
                         IsSuccessfullRequest = result.IsSuccessfullRequest,
                         Message = result.Message,
                         Data = result.Data,
                     };
+#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
                 }
 
                 await _unitOfWork.SaveChangesAsync();
-                
+
                 return new Response<bool>
                 {
                     IsSuccessfullRequest = result.IsSuccessfullRequest,

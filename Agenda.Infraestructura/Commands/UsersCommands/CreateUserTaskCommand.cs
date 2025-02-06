@@ -2,7 +2,7 @@
 using Agenda.Dominio.Utilies;
 using MediatR;
 
-namespace Agenda.Infraestructura.Commands.AgendaCommands
+namespace Agenda.Infraestructura.Commands.UsersCommands
 {
-    public record CreateUserTaskCommand(UsuarioDto UserDto) : IRequest<Response<bool>>; 
+    public record CreateUserTaskCommand(UsuarioDto UserDto) : IRequest<Response<bool>>;
 }

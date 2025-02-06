@@ -1,6 +1,6 @@
 ﻿using Agenda.Dominio.Interfaces;
 using Agenda.Dominio.Utilies;
-using Agenda.Infraestructura.Commands.AgendaCommands;
+using Agenda.Infraestructura.Commands.UsersCommands;
 using AutoMapper;
 using MediatR;
 

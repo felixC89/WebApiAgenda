@@ -5,11 +5,11 @@ namespace Agenda.Aplicacion.Validator
 {
     public class AgendaValidator : AbstractValidator<AgendaDto>
     {
-        public AgendaValidator() 
+        public AgendaValidator()
         {
             RuleFor(x => x.Nombre)
                 .NotEmpty().WithMessage("El nombre es obligatorio.");
-            
+
             RuleFor(x => x.Apellido)
                 .NotEmpty()
                 .WithMessage("El apellido es obligatorio.");
@@ -17,7 +17,7 @@ namespace Agenda.Aplicacion.Validator
             RuleFor(x => x.Nacionalidad)
                 .NotEmpty()
                 .WithMessage("La nacionalidad es obligatoria.");
-            
+
             RuleFor(x => x.Telefono)
                 .NotEmpty();
 
@@ -34,7 +34,7 @@ namespace Agenda.Aplicacion.Validator
             RuleFor(x => x.Edad)
                 .NotEmpty()
                 .WithMessage("La edad es obligatoria.");
-            
+
             RuleFor(x => x.IdUser)
                 .NotEmpty()
                 .WithMessage("El id del usuario es obligatorio.");
